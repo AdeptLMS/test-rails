@@ -1,0 +1,20 @@
+require:
+  - rubocop
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  NewCops: enable
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  TargetRubyVersion: 3.1
+  Exclude:
+    - Guardfile
+    - bin/**/*
+    - config/**/*
+    - db/**/*
+    - log/**/*
+    - public/**/*
+    - tmp/**/*
+    - Rakefile
+    - node_modules/**/*
+    - vendor/bundle/**/*
