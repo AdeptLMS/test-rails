@@ -237,7 +237,7 @@ GEM
     spring (4.1.0)
     spring-commands-rspec (1.0.4)
       spring (>= 0.9.1)
-    sqlite3 (1.5.0)
+    sqlite3 (1.5.1)
       mini_portile2 (~> 2.8.0)
     strscan (3.0.4)
     thor (1.2.1)
@@ -275,7 +275,7 @@ DEPENDENCIES
   shoulda-matchers (~> 5.0)
   spring
   spring-commands-rspec
-  sqlite3 (~> 1.4)
+  sqlite3 (~> 1.5)
   tzinfo-data
   vite_rails (~> 3.0)
 
