@@ -18,3 +18,7 @@ AllCops:
     - Rakefile
     - node_modules/**/*
     - vendor/bundle/**/*
+Style/Documentation:
+  Enabled: false
+Rails/ApplicationController:
+  Enabled: false
