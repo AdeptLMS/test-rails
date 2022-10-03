@@ -4,17 +4,28 @@ require 'rails_helper'
 
 RSpec.describe 'Todos', type: :request do
   describe 'GET /todos' do
+    before do
+      2.times do |time|
+        Todo.create(
+          title: "Todo #{time}"
+        )
+      end
+    end
+
     it 'returns http success', :aggregate_failures do
       get '/todos'
       expect(response).to have_http_status(:success)
+      json = JSON.parse(response.body)
       expect(json['todos'].size).to eq(2)
     end
   end
 
   describe 'POST /todos' do
-    it 'returns http success', :aggregate_failures do
+    it 'returns http success', :aggregate_failures, :focus do
       expect do
-        # do request
+        post '/todos', 
+          params: { title: 'Make the specs pass' }.to_json,
+          headers: { 'content-type': 'application/json' }
       end.to change(Todo, :count).by(1)
 
       expect(response).to have_http_status(:created)
